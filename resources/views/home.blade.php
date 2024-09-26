@@ -197,10 +197,10 @@
                     <a href="#">Dhea<span>Dewanti</span></a>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/home">Beranda</a></li>
+                    <li><a href="/gallery">Poto</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">kontak</a></li>
                 </ul>
             </div>
         </nav>
@@ -210,9 +210,9 @@
     <section class="hero">
         <div class="overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Welcome to My Website</h1>
-            <p class="hero-subtitle">Discover unique designs, ideas, and inspirations.</p>
-            <a href="#" class="cta-btn">Get Started</a>
+            <h1 class="hero-title">Hallo Guys 👋</h1>
+            <p class="hero-subtitle">Saya Dhea Dewanti</p>
+            <a href="#" class="cta-btn">Masuk</a>
         </div>
     </section>
 
@@ -221,18 +221,18 @@
         <div class="container">
             <div class="feature-item">
                 <i class="fas fa-pencil-ruler"></i>
-                <h3>Innovative Design</h3>
-                <p>We create unique designs that stand out from the crowd.</p>
+                <h3>Desain Inovatif</h3>
+                <p>Saya menciptakan desain unik yang menarik dari yang lain.</p>
             </div>
             <div class="feature-item">
                 <i class="fas fa-cogs"></i>
-                <h3>Technology</h3>
-                <p>Using the latest technologies for the best user experience.</p>
+                <h3>Teknologi</h3>
+                <p>Menggunakan teknologi terkini untuk pengalaman pengguna terbaik.</p>
             </div>
             <div class="feature-item">
                 <i class="fas fa-leaf"></i>
-                <h3>Sustainability</h3>
-                <p>Designs that are eco-friendly and sustainable.</p>
+                <h3>Keberlanjutan</h3>
+                <p>Desain yang ramah lingkungan dan berkelanjutan.</p>
             </div>
         </div>
     </section>
@@ -240,9 +240,86 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 MyWebsite. All Rights Reserved.</p>
+            <p>&copy;Hak Cipta Dilindungi Undang-Undang 2024.</p>
         </div>
     </footer>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home - Book List</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f39c12;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Daftar Buku</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Judul</th>
+                <th>Pengarang</th>
+                <th>Tahun</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($books as $book)
+            <tr>
+                <td>{{ $book['Judul'] }}</td>
+                <td>{{ $book['Pengarang'] }}</td>
+                <td>{{ $book['Tahun'] }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 </body>
 

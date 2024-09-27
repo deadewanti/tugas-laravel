@@ -20,25 +20,28 @@
             color: #333;
         }
 
-       /* Navbar */
-    .header {
-    background-color: #fff;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    }
-    
-    .navbar .container {
-    max-width: 1200px; /* Batas lebar konten navbar */
-    margin: 0 auto; /* Memusatkan navbar */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px; /* Menambahkan padding untuk mencegah isi navbar menyentuh tepi layar */
-    }
+        /* Navbar */
+        .header {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            max-width: 1200px;
+            /* Batas lebar konten navbar */
+            margin: 0 auto;
+            /* Memusatkan navbar */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            /* Menambahkan padding untuk mencegah isi navbar menyentuh tepi layar */
+        }
 
         .logo a {
             font-size: 1.8rem;
@@ -74,7 +77,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background-color:cornsilk;
+            background-color: cornsilk;
             background-size: cover;
             background-position: center;
             display: flex;
@@ -176,18 +179,18 @@
             font-size: 0.9rem;
         }
     </style>
-<!-- Link ke file CSS -->
-<link rel="stylesheet" href="style.css">
+    <!-- Link ke file CSS -->
+    <link rel="stylesheet" href="style.css">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-<!-- Font Awesome untuk ikon -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-   
+
 
     <!-- Navbar -->
     <header class="header">
@@ -295,13 +298,22 @@
             text-align: center;
             margin-bottom: 20px;
         }
+
+        /* Pesan */
+        .message {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f39c12;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
 
     <h1>Daftar Buku</h1>
-
     <table>
         <thead>
             <tr>
@@ -321,6 +333,12 @@
         </tbody>
     </table>
 
+    <!-- Menampilkan pesan jika ada -->
+    @if($message)
+    <div class="message">
+        <p>{{ $message }}</p>
+    </div>
+    @endif
 </body>
 
 </html>

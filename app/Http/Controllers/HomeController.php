@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -32,4 +33,22 @@ class HomeController extends Controller
         // Redirect ke halaman home dengan data message
         return redirect('/home');
     }
+
+    public function store(){
+        $product = new Product();
+        $product->nama = "Laptop";
+        $product->harga = 10000;
+        $product->stok = 10;
+        $product->deskripsi = "Laptop murah";
+        $product->save();
+
+        return ("data sukses dikirim");
 }
+
+public function show(){
+    $products = Product::all();
+    return view("tableproduct",compact("products"));
+}
+
+}
+ 

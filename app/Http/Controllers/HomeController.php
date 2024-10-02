@@ -34,7 +34,8 @@ class HomeController extends Controller
         return redirect('/home');
     }
 
-    public function store(){
+    public function store()
+    {
         $product = new Product();
         $product->nama = "Laptop";
         $product->harga = 10000;
@@ -44,11 +45,71 @@ class HomeController extends Controller
 
         return ("data sukses dikirim");
 }
+        public function store2()
+    {
+        $product = new Product();
+        $product->nama = "hp vivo";
+        $product->harga = 10000;
+        $product->stok = 10;
+        $product->deskripsi = "hp vivo murah";
+        $product->save();
 
-public function show(){
-    $products = Product::all();
-    return view("tableproduct",compact("products"));
-}
+        return ("data sukses dikirim");
+    }
+    public function store3()
+    {
+        $product = new Product();
+        $product->nama = "hp samsung";
+        $product->harga = 10000;
+        $product->stok = 10;
+        $product->deskripsi = "hp samsung";
+        $product->save();
 
+        return ("data sukses dikirim");
+    }
+      public function store4()
+    {
+        $product = new Product();
+        $product->nama = "laptop hp";
+        $product->harga = 10000;
+        $product->stok = 10;
+        $product->deskripsi = "laptop merek hp";
+        $product->save();
+
+        return ("data sukses dikirim");
 }
- 
+    public function show()
+    {
+        $Products = Product::all();
+        return view("tableProduct", compact("Products"));
+    }
+
+    public function edit($id)
+    {
+
+        $product = Product::findOrFail($id);
+        
+
+        return view("editProduct", compact("product"));
+    }
+    public function update(Request $request, $id) {
+
+        $product = Product::findOrFail($id);
+
+
+        $product->nama = $request->nama;
+        $product->harga = $request->harga;
+        $product->stok = $request->stok;
+        $product->deskripsi = $request->deskripsi;
+        $product->save();
+
+        return redirect('/show');
+    }
+    public function destroy($id){
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect('/show');
+    }
+    }
+

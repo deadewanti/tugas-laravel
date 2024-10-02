@@ -27,6 +27,18 @@
         th {
             background-color: #f2f2f2;
         }
+
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 
@@ -42,10 +54,11 @@
                 <th>deskripsi</th>
                 <th>created At</th>
                 <th>updated At</th>
+                <th>Aksi</th> <!-- Menambahkan kolom untuk aksi edit -->
             </tr>
         </thead>
         <tbody>
-            @foreach ($products as $product)
+            @foreach ($Products as $product)
             <tr>
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->nama }}</td>
@@ -54,6 +67,17 @@
                 <td>{{ $product->deskripsi }}</td>
                 <td>{{ $product->created_at }}</td>
                 <td>{{ $product->updated_at }}</td>
+                <td>
+                    <!-- Tombol Edit -->
+                    <form action="/products/{{ $product->id }}/edit" method="GET" style="display:inline;">
+                        <button type="submit">Edit</button>
+                    </form>
+                    
+                    <!-- Tombol Hapus -->
+                    <form action="/products/{{ $product->id }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Hapus</button>
             </tr>
             @endforeach
         </tbody>
